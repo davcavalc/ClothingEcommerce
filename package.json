@@ -1,0 +1,25 @@
+{
+  "name": "clothingecommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davcavalc/ClothingEcommerce.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davcavalc/ClothingEcommerce/issues"
+  },
+  "homepage": "https://github.com/davcavalc/ClothingEcommerce#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express.js": "^1.0.0",
+    "firebase-admin": "^11.0.0",
+    "nodemon": "^2.0.18"
+  }
+}
