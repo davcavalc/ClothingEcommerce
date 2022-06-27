@@ -1,16 +1,16 @@
 const CREATE_NAVBAR = () => {
 	let nav = document.querySelector('.navbar');
 	nav.innerHTML = `
-    
+
     <div class="nav">
-            <img src="/public/img/dark-logo.png" alt="" class="brand-logo">
+            <img src="public/img/dark-logo.png" alt="" class="brand-logo">
             <div class="nav-items">
                 <div class="search">
                     <input type="text" placeholder="search brand, product" class="search-box">
                     <button class="search-btn">search</button>
                 </div>
                 <a href="#">
-                    <img src="/public/img/user.png" alt="">
+                    <img src="public/img/user.png" alt="">
                 </a>
                 <a href="#">
                     <img src="/public/img/cart.png" alt="">
@@ -34,7 +34,7 @@ const CREATE_NAVBAR = () => {
                 <a href="#" class="link">accessories</a>
             </li>
         </ul>
-    
+
     `;
 };
 
