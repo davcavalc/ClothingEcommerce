@@ -5,9 +5,9 @@
 }
 
 .teste {
-	color: red;
+	color: blueviolet;
 }
 
 .teste:hover {
-	background-color: #000;
+	background-color: gray;
 }
