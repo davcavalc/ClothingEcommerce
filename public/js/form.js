@@ -1,3 +1,4 @@
+const loader = document.querySelector(".loader");
 // ! ||--------------------------------------------------------------------------------||
 // ! ||                                  SELECT INPUTS                                 ||
 // ! ||--------------------------------------------------------------------------------||
@@ -12,8 +13,45 @@ const notification = document.querySelector("#notifications");
 submitBtn.addEventListener("click", () => {
  if (name.value.length < 3) {
   showAlert("name must be 3 letters long!");
+ } else if (!email.value.length) {
+  showAlert("enter your email");
+ } else if (password.value.length < 8) {
+  showAlert("password should be 8 letters long");
+ } else if (!number.value.length) {
+  showAlert("enter your phone number");
+ } else if (!Number(number.value) || number.value.length < 10) {
+  showAlert("invalid number! Please enter valid one!");
+ } else if (!tac.checked) {
+  showAlert("you must agree to our terms and conditions");
+ } else {
+  //submit form
+  loader.style.display = "block";
+  sendData("/signup", {
+   name: name.value,
+   email: email.value,
+   password: password.value,
+   number: number.value,
+   tac: tac.checked,
+   //    notification: notification.checked,
+   seller: false,
+  });
  }
 });
+
+// ! ||--------------------------------------------------------------------------------||
+// ! ||                               SEND DATA FUNCTION                               ||
+// ! ||--------------------------------------------------------------------------------||
+const sendData = (path, data) => {
+ fetch(path, {
+  method: "post",
+  headers: new Headers({ "Content-Type": "application/json" }),
+  body: JSON.stringify(data),
+ })
+  .then((res) => res.json())
+  .then((response) => {
+   console.log(response);
+  });
+};
 
 // ! ||--------------------------------------------------------------------------------||
 // ! ||                                 ALERT FUNCTION                                 ||
