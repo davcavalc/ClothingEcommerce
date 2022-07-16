@@ -29,7 +29,25 @@ app.get("/signup", (req, res) => {
 });
 
 app.post("/signup", (req, res) => {
- console.log(req.body);
+ let { name, email, password, number, tac, notification } = req.body;
+
+ //Forms validation
+ if (name.length < 3) {
+  return res.json({ alert: "name must be 3 letters long." });
+ } else if (!email.length) {
+  return res.json({ alert: "enter your email" });
+ } else if (password.length < 8) {
+  return res.json({ alert: "password should be 8 letters long" });
+ } else if (!number.length) {
+  return res.json({ alert: "enter your phone number" });
+ } else if (!Number(number) || number.length < 10) {
+  return res.json({ alert: "invalid number! Please enter valid one!" });
+ } else if (!tac.checked) {
+  return res.json({ alert: "you must agree to our terms and conditions" });
+ } else {
+     //store user in db
+     
+ }
  res.json("data recieved!");
 });
 
